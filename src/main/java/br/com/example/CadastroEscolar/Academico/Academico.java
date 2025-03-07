@@ -1,11 +1,9 @@
 package br.com.example.CadastroEscolar.Academico;
 
 import br.com.example.CadastroEscolar.CadastroModel;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "cadastro_academico")
@@ -15,13 +13,11 @@ public class Academico {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private int matricula;
-
     private int turma;
 
     private String turno;
 
-    private CadastroModel aluno;
-
-
+    //uma turma e turno pode ter varios alunos
+    @OneToMany(mappedBy = "academico")
+    private List<CadastroModel> alunos;
 }

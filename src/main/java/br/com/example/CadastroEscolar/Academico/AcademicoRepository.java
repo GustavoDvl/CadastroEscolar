@@ -1,4 +1,6 @@
 package br.com.example.CadastroEscolar.Academico;
 
-public interface AcademicoRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface AcademicoRepository extends JpaRepository<Academico, Long> {
 }
