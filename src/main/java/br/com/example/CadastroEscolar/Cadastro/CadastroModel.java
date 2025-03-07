@@ -1,4 +1,4 @@
-package br.com.example.CadastroEscolar;
+package br.com.example.CadastroEscolar.Cadastro;
 
 import br.com.example.CadastroEscolar.Academico.Academico;
 import jakarta.persistence.*;
@@ -18,20 +18,19 @@ public class CadastroModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "Nome do Aluno")
+    @Column(name = "Nome_do_Aluno")
     private String nome;
     @Column(name = "Matricula")
     private int matricula;
     @Column(name = "email ")
     private String email;
-    @Column(name = "Nome do Responsável")
+    @Column(name = "Nome_do_Responsável")
     private  String nomeDoResponsavel;
     @Column(name = "Telefone")
     private int telefone;
     @Column(name = "Endereco")
     private String endereco;
 
-    private List<Academico> lista;
 
     // um aluno tem uma unica matricula, turno e turma
     @ManyToOne
